@@ -70,7 +70,7 @@ def parseDataset():
 
     # Show some stats
     log.i(("CLASSES:", len(classes)))
-    log.i(( "CLASS LABELS:", sorted(sample_count.items(), key=operator.itemgetter(1))))
+    log.i(( "CLASS LABELS:", sorted(list(sample_count.items()), key=operator.itemgetter(1))))
     log.i(("TRAINING IMAGES:", len(train)))
     log.i(("VALIDATION IMAGES:", len(val)))
 

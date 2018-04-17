@@ -66,7 +66,7 @@ def parseDataset():
             try:
 
                 # Stats
-                print i + 1, '/', len(afiles), c, afiles[i],
+                print(i + 1, '/', len(afiles), c, afiles[i], end=' ')
 
                 # Get specs and signal to noise ratios
                 specs, noise = getSpecs(os.path.join(cfg.TRAINSET_PATH, 'train', c, afiles[i]))
@@ -114,8 +114,9 @@ def parseDataset():
                 # Stats
                 log.i((spec_cnt, 'specs'))       
 
-            except:
+            except Exception as e:
                 log.e((spec_cnt, 'specs', 'ERROR DURING SPEC EXTRACT'))
+                print(e)
                 continue
 
 

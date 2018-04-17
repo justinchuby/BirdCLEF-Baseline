@@ -21,7 +21,7 @@ from lasagne import updates
 from lasagne import regularization
 
 import config as cfg
-import lasagne_io as io
+from . import lasagne_io as io
 from utils import log
 
 from lasagne import random as lasagne_random

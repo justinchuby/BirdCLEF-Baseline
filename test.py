@@ -177,7 +177,7 @@ def test(SNAPSHOT):
                 p_labels[cfg.CLASSES[i]] = p_pool[i]
 
             # Sort by score
-            p_sorted =  sorted(p_labels.items(), key=operator.itemgetter(1), reverse=True)  
+            p_sorted =  sorted(list(p_labels.items()), key=operator.itemgetter(1), reverse=True)  
 
             # Calculate MLRAP (MRR for single labels)
             targets = np.zeros(p_pool.shape[0], dtype='float32')

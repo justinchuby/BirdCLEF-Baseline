@@ -224,7 +224,7 @@ def augment(img, augmentation={}, count=3, probability=0.5):
         if RANDOM.choice([True, False], p=[probability, 1 - probability]):
 
             # Choose one method
-            aug = RANDOM.choice(augmentations.keys())
+            aug = RANDOM.choice(list(augmentations.keys()))
             
             # Call augementation methods
             if aug == 'flip':

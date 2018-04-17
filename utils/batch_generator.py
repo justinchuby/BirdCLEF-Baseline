@@ -41,7 +41,7 @@ def loadImageAndTarget(sample, augmentation):
 def getDatasetChunk(split):
 
     #get batch-sized chunks of image paths
-    for i in xrange(0, len(split), cfg.BATCH_SIZE):
+    for i in range(0, len(split), cfg.BATCH_SIZE):
         yield split[i:i+cfg.BATCH_SIZE]
 
 def getNextImageBatch(split, augmentation=True): 
@@ -80,8 +80,8 @@ def getNextImageBatch(split, augmentation=True):
 #Credit: J. Schlüter (https://github.com/Lasagne/Lasagne/issues/12)
 def threadedGenerator(generator, num_cached=32):
     
-    import Queue
-    queue = Queue.Queue(maxsize=num_cached)
+    import queue
+    queue = queue.Queue(maxsize=num_cached)
     sentinel = object()  # guaranteed unique reference
 
     #define producer (putting items into queue)
